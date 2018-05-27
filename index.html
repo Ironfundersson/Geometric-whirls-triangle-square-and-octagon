@@ -1,13 +1,125 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="canvas">
-  <title>canvas</title>
+  <meta name="author" content="Tamás Szegedi">
+  <meta name="description" content="geometric-whirls">
+  <title>geometric-whirls</title>
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <link type="text/css" rel="stylesheet" href="main.css">
 </head>
-  <body style="display: flex; justify-content: center;">
-    <canvas id="canvas" width="500" height="500" style="border: 1px solid tomato; background-color: ivory;"></canvas>
-    <script src="scripts.js"></script>
-  </body>
+<body>
+  <div class="wrapper">
+    <div class="canvas"><canvas id="canvas" width="500" height="500" style="border: 1px solid gray; background-color: rgba(220, 220, 220, .7);"></canvas></div>
+    <div class="content">
+      <div class="text"><h1>Geometric "whirls"</h1>
+        <p class="content">"Whirls are figures constructed by nesting a sequence of polygons (each having the same number of sides), each slightly smaller and rotated relative to the previous one." <br><a rel="author" target="_blank" href="http://www.donteatthepaste.com/2011/04/drawing-geometric-whirls-with-templates.html">Don't Eat The Paste - Drawing geometric whirls - wiht templates</a></p></div>
+      <div class="polygons">
+        <h2>Base settings</h2>
+        <table class="formation">
+              <caption>Please, select from different possibility (wich polygon will be drawed)</caption>
+              <tr>
+                <th>Triangel <input id="chTri" type="checkbox" name="formation" value="tri"></th>
+                <th>Rectangel <input id="chRect" type="checkbox" name="formation" value="rect"></th>
+                <th>Octagon <input id="chOct" type="checkbox" name="formation" value="oct"></th>
+              </tr>
+            </table>
+      </div>
+      <div class="data">
+        <div class="tri">
+          <table>
+                <caption>Triangle</caption>
+                <tr>
+                  <th>Propeties</th>
+                  <th>Value</th>
+                </tr>
+                <tr>
+                  <td class="propeties">The horizontal coordinate of center of the polygon</td>
+                  <td class="value"><input id="triX" type="number" value="250"></td>
+                </tr>
+                <tr>
+                  <td class="propeties">The vertical coordinate of center of the polygon</td>
+                  <td class="value"><input id="triY" type="number" value="250"></td>
+                </tr>
+                <tr>
+                  <td class="propeties">The lenght of sides</td>
+                  <td class="value"><input id="triA" type="number" value="170"></td>
+                </tr>
+                <tr>
+                  <td class="propeties">The degree of rotation</td>
+                  <td class="value"><input id="triDiff" type="number" value="2"></td>
+                </tr>
+                <tr>
+                  <td class="propeties">The number of rotation</td>
+                  <td class="value"><input id="triNum" type="number" value="10"></td>
+                </tr>
+              </table>
+        </div>
+        <div class="rect">
+          <table>
+                <caption>Rectangel</caption>
+                <tr>
+                  <th>Propeties</th>
+                  <th>Value</th>
+                </tr>
+                <tr>
+                  <td class="propeties">The horizontal coordinate of center of the polygon</td>
+                  <td class="value"><input id="rectX" type="number" value="250"></td>
+                </tr>
+                <tr>
+                  <td class="propeties">The vertical coordinate of center of the polygon</td>
+                  <td class="value"><input id="rectY" type="number" value="250"></td>
+                </tr>
+                <tr>
+                  <td class="propeties">The lenght of sides</td>
+                  <td class="value"><input id="rectA" type="number" value="300"></td>
+                </tr>
+                <tr>
+                  <td class="propeties">The degree of rotation</td>
+                  <td class="value"><input id="rectDiff" type="number" value="2"></td>
+                </tr>
+                <tr>
+                  <td class="propeties">The number of rotation</td>
+                  <td class="value"><input id="rectNum" type="number" value="10"></td>
+                </tr>
+              </table>
+        </div>
+        <div class="oct">
+          <table>
+                <caption>Octagon</caption>
+                <tr>
+                  <th>Propeties</th>
+                  <th>Value</th>
+                </tr>
+                <tr>
+                  <td class="propeties">The horizontal coordinate of center of the polygon</td>
+                  <td class="value"><input id="octX" type="number" value="250"></td>
+                </tr>
+                <tr>
+                  <td class="propeties">The vertical coordinate of center of the polygon</td>
+                  <td class="value"><input id="octY" type="number" value="250"></td>
+                </tr>
+                <tr>
+                  <td class="propeties">The lenght of sides</td>
+                  <td class="value"><input id="octA" type="number" value="190"></td>
+                </tr>
+                <tr>
+                  <td class="propeties">The degree of rotation</td>
+                  <td class="value"><input id="octDiff" type="number" value="2"></td>
+                </tr>
+                <tr>
+                  <td class="propeties">The number of rotation</td>
+                  <td class="value"><input id="octNum" type="number" value="10"></td>
+                </tr>
+              </table>
+        </div>
+      </div>
+      <div class="btn">
+        <button id="btn" onclick="settings()">Try it >></button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
